@@ -140,6 +140,13 @@ class calculation extends function
 						break;
 
 				case '\u221A' :
+						if((flag>>3 & 1)==1)
+						{
+							int z=result.length();
+							while(result.charAt(--z)!='\u221A');
+							System.out.println(z);
+							result.delete(z,result.length());
+						}
 						ans=unary(in.toString(),clk.charAt(0));
 						flag = (byte)(flag & 14);
 						flag = (byte)(flag | 8);
